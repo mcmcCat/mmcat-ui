@@ -1,0 +1,37 @@
+{
+  "id": "4243148",
+  "name": "mmcat-ui",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "33297100",
+      "name": "编辑",
+      "font_class": "bianji",
+      "unicode": "e6b9",
+      "unicode_decimal": 59065
+    },
+    {
+      "icon_id": "33297048",
+      "name": "个人",
+      "font_class": "geren",
+      "unicode": "e6b3",
+      "unicode_decimal": 59059
+    },
+    {
+      "icon_id": "33297069",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e6b5",
+      "unicode_decimal": 59061
+    },
+    {
+      "icon_id": "33297094",
+      "name": "失败",
+      "font_class": "shibai",
+      "unicode": "e6b8",
+      "unicode_decimal": 59064
+    }
+  ]
+}
