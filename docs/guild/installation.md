@@ -1,35 +1,13 @@
-# 安装
+# 特性
 
-## 环境支持
+## 简要介绍
 
-由于 Vue 3 不再支持 IE11，TwoYoung UI 也不再支持 IE11 浏览器。
+- 该组件库采用 `Vue@3.3.4` + `TypeScript@5.2.2` + `Vite@4.4.5` + `Sass@1.66.1` 实现！
+- 所有组件样式 `CSS` 均采用 BEM 规范，参照 Element-Plus 官方样式架构
+- 部分组件样式尚未完美适配暗黑模式，可切换至 `light` 模式查看！
+- 开箱即用！
 
-## 版本
+## 使用方式
 
-TwoYoung UI 目前还在开发迭代中
-
-## 使用包管理器
-
-建议您使用包管理器 (NPM, Yarn, pnpm) 安装 TwoYoung UI, 然后您就可以使用打包工具，例如 Vite 和 webpack
-
-# 选择一个你喜欢的包管理器
-
-## NPM
-```JavaScript
-$ npm install tsheep-ui@latest --save
-```
-
-## Yarn
-```JavaScript
-$ yarn add tsheep-ui@latest
-```
-
-## pnpm
-```JavaScript
-$ pnpm install tsheep-ui@latest
-```
-
-## 浏览器直接引入
-
-暂不支持
-
+- 全局引入并注册所有组件
+- 按需引入并注册部分组件

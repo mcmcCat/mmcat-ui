@@ -18,8 +18,8 @@ features:
     title: 开发依赖
     details: 组件库采用 Vue@3.3.4 + TypeScript@5.2.2 + Vite@4.4.5 + Sass@1.66.1 实现
   - icon: 🛠️
-    title: 仅供学习使用
-    details: 倾向于Vue3组件库的学习，请勿用于实际生产项目
+    title: BEM样式架构
+    details: 采用BEM规范，参照 Element-Plus 官方样式架构
   - icon: 📦
     title: 开箱即用
     details: 常用基础 UI 组件

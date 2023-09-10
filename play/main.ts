@@ -1,10 +1,10 @@
 import { createApp } from 'vue'
 /* develop */
-// import McElementPlus from '../packages/index'
-// import '@mmcat-ui/theme-chalk/src/index.scss'
+import McElementPlus from '../packages/index'
+import '@mmcat-ui/theme-chalk/src/index.scss'
 /* test */
-import McElementPlus from 'mmcat-ui'
-import 'mmcat-ui/dist/style.css'
+// import McElementPlus from 'mmcat-ui'
+// import 'mmcat-ui/dist/style.css'
 
 import App from './src/App.vue'
 

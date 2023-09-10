@@ -13,7 +13,7 @@ export default {
     // 社交平台地址
     socialLinks: [
       // github
-      { icon: "github", link: "https://gitee.com/geeksdidi" },
+      { icon: "github", link: "https://github.com/mcmcCat/tsheep-ui/tree/master" },
     ],
     // 侧边栏
     sidebar: {
@@ -30,16 +30,6 @@ export default {
             {
               text: "快速开始",
               link: "/guild/quickstart",
-            },
-          ],
-        },
-        {
-          text: "进阶",
-          collapsed: false,
-          items: [
-            {
-              text: "主题切换",
-              link: "/guild/theme",
             },
           ],
         },
