@@ -1,2 +1,3 @@
 /// <reference types="vite/client" />
-/// <reference types="vue/macros-global" />
+
+declare module 'mmcat-ui'
