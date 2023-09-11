@@ -1,7 +1,6 @@
 {
   "name": "mmcat-ui",
-  "author": "mcmcCat",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A Vue3 Cool UI From mcmcCat.",
   "files": [
     "dist",
@@ -24,15 +23,33 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
     "build": "vite build",
+    "publish": "npm publish --registry=https://registry.npmjs.org/",
     "preview": "vite preview"
   },
-  "keywords": [],
-  "license": "MIT",
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vue": "^3.3.4",
     "vue-tsc": "^1.8.5"
-  }
+  },
+  "author": "mcmcCat",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcmcCat/mmcat-ui.git"
+  },
+  "keywords": [
+    "Vue3",
+    "TS",
+    "Vite",
+    "Sass",
+    "UI",
+    "Components",
+    "Tools"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mcmcCat/mmcat-ui.git/issues"
+  },
+  "homepage": "https://mcmccat.github.io/mmcat-ui/"
 }

@@ -57,8 +57,8 @@ importers:
   play:
     dependencies:
       mmcat-ui:
-        specifier: ^1.0.3
-        version: 1.0.3
+        specifier: ^1.0.4
+        version: 1.0.4
       vue:
         specifier: ^3.3.4
         version: 3.3.4
@@ -1387,8 +1387,8 @@ packages:
     resolution: {integrity: sha512-PNxA/X8pWk+TiqPbsoIYH0GQ5Di7m6326/lwU/S4mlo4wGQddIcf/V//1f9TB0V4j59b57b+HZxt8h3iMROGvg==}
     dev: true
 
-  /mmcat-ui@1.0.3:
-    resolution: {integrity: sha512-lqqtQeU0W+NkG7teVLr2PuMPFXj+EOYj7pBYecgCMlDqcB2vc9/9Vk3jStSSXr+MP+pr0RrVgyfmd2jVlDYVqg==}
+  /mmcat-ui@1.0.4:
+    resolution: {integrity: sha512-f9EN/ENlAUHpk9I0z4rquOCTuF/27OxbtV4rqpJV+ICwDyPigkYw2P1SDEF19aWwzbcKE5c9JWYoAZm3nsVuXg==}
     dev: false
 
   /muggle-string@0.3.1:

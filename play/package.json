@@ -7,7 +7,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "mmcat-ui": "^1.0.3",
+    "mmcat-ui": "^1.0.4",
     "vue": "^3.3.4"
   },
   "devDependencies": {
