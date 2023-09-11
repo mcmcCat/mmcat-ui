@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineOptions({
-    name: "EditIcon"
+    name: "Edit"
 });
 </script>
 <template>

@@ -1,14 +1,14 @@
 // 使用并扩展默认主题 DefaultTheme
 import DefaultTheme from "vitepress/theme";
 
-import "../../../packages/dist/style.css"; 
-
-/* develop */
+/* development */
 import McElementPlus from '../../../packages/dist/mmcat-ui'
 import '../../../packages/dist/style.css'
-/* test */
+/* production */
 // import McElementPlus from 'mmcat-ui'
 // import 'mmcat-ui/dist/style.css'
+
+export * from '../../../packages/dist/mmcat-ui';
 
 export default {
   ...DefaultTheme,

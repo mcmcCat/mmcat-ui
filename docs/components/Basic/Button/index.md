@@ -6,6 +6,16 @@
 
 使用 `type="xxx"`、`plain`、`round` 和 `circle` 来定义按钮的样式。
 
+<script setup lang="ts">
+import {
+  Edit,
+  User,
+  Search,
+  Error,
+  Warning,
+  Success,
+} from "@mmcat-ui/components/iconSvg";  // 通过props的icon属性实现，需要单独引入IconSvg组件
+</script>
 <div class="example">
   <div class="item">
     <mc-button type="default">Default</mc-button>
@@ -34,23 +44,32 @@
     <mc-button type="danger" round>Danger</mc-button>
   </div>
   <div class="item">
-    props：
-    <mc-button :icon="EditIcon" circle />
-    <mc-button type="primary" :icon="EditIcon" circle />
-    <mc-button type="success" :icon="EditIcon" circle />
-    <mc-button type="info" :icon="EditIcon" circle />
-    <mc-button type="warning" :icon="EditIcon" circle />
-    <mc-button type="danger" :icon="EditIcon" circle />
-    插槽：
-    <mc-button type="danger" circle>
-      <template #icon><EditIcon /></template>
+    <mc-button :icon="Edit" circle />
+    <!-- 通过插槽实现，支持全局注册 -->
+    <mc-button type="primary" circle>
+      <template #icon><User /></template>
     </mc-button>
+    <!-- 通过props的icon属性实现，需要单独引入IconSvg组件 -->
+    <mc-button type="success" :icon="Search" circle />
+    <mc-button type="info" :icon="Error" circle />
+    <mc-button type="warning" :icon="Warning" circle />
+    <mc-button type="danger" :icon="Success" circle />
   </div>
 </div>
 
 ::: details Show Code
 
 ```vue
+<script setup lang="ts">
+import {
+  Edit,
+  User,
+  Search,
+  Error,
+  Warning,
+  Success,
+} from "@mmcat-ui/components/iconSvg"; // 通过props的icon属性实现，需要单独引入IconSvg组件
+</script>
 <template>
   <div class="item">
     <mc-button type="default">Default</mc-button>
@@ -77,17 +96,16 @@
     <mc-button type="danger" round>Danger</mc-button>
   </div>
   <div class="item">
-    props：
-    <mc-button :icon="EditIcon" circle />
-    <mc-button type="primary" :icon="EditIcon" circle />
-    <mc-button type="success" :icon="EditIcon" circle />
-    <mc-button type="info" :icon="EditIcon" circle />
-    <mc-button type="warning" :icon="EditIcon" circle />
-    <mc-button type="danger" :icon="EditIcon" circle />
-    插槽：
-    <mc-button type="danger" circle>
-      <template #icon><EditIcon /></template>
+    <mc-button :icon="Edit" circle />
+    <!-- 通过插槽实现，支持全局注册 -->
+    <mc-button type="primary" circle>
+      <template #icon><User /></template>
     </mc-button>
+    <!-- 通过props的icon属性实现，需要单独引入IconSvg组件 -->
+    <mc-button type="success" :icon="Search" circle />
+    <mc-button type="info" :icon="Error" circle />
+    <mc-button type="warning" :icon="Warning" circle />
+    <mc-button type="danger" :icon="Success" circle />
   </div>
 </template>
 ```
@@ -162,9 +180,9 @@
     <mc-button size="small" round>Small</mc-button>
   </div>
   <div class="item">
-    <mc-button :icon="EditIcon" size="large" circle />
-    <mc-button :icon="EditIcon" circle />
-    <mc-button :icon="EditIcon" size="small" circle />
+    <mc-button :icon="Edit" size="large" circle />
+    <mc-button :icon="Edit" circle />
+    <mc-button :icon="Edit" size="small" circle />
   </div>
 </div>
 
@@ -183,27 +201,53 @@
     <mc-button size="small" round>Small</mc-button>
   </div>
   <div class="item">
-    <mc-button :icon="EditIcon" size="large" circle />
-    <mc-button :icon="EditIcon" circle />
-    <mc-button :icon="EditIcon" size="small" circle />
+    <mc-button :icon="Edit" size="large" circle />
+    <mc-button :icon="Edit" circle />
+    <mc-button :icon="Edit" size="small" circle />
   </div>
 </template>
 ```
 
 :::
 
-<script setup>
-</script>
-
-<style>
-.example {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #dcdfe6;
-  border-radius: 5px;
-  padding:20px;
-}
-.example .item {
-  margin: 10px 0;
-} 
+<style scoped>
+  .example {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #dcdfe6;
+    border-radius: 5px;
+    padding:20px;
+  }
+  .example .item {
+    margin: 10px 0;
+  } 
 </style>
+
+## API
+
+### Attributes
+
+| 属性名      | 说明                  | 类型                                                       | 默认值 |
+| ----------- | --------------------- | ---------------------------------------------------------- | ------ |
+| size        | 尺寸                  | `'large' \| 'default' \| 'small'`                          | —      |
+| type        | 类型                  | `'primary' \| 'success' \| 'warning' \|'danger' \| 'info'` | —      |
+| plain       | 是否为朴素按钮        | `boolean`                                                  | —      |
+| round       | 是否为圆角按钮        | `boolean`                                                  | false  |
+| circle      | 是否为圆形按钮        | `boolean`                                                  | false  |
+| disabled    | 按钮是否为禁用状态    | `boolean`                                                  | false  |
+| icon        | 图标组件              | `'string' \| 'Component'`                                  | —      |
+| autofocus   | 原生 `autofocus` 属性 | `boolean`                                                  | false  |
+| native-type | 原生 type 属性        | `'button' \| 'submit' \| 'reset'`                          | button |
+
+### Slots
+
+| 名称    | 说明           |
+| ------- | -------------- |
+| default | 自定义默认内容 |
+| icon    | 自定义图标组件 |
+
+### Exposes
+
+| 属性名 | 说明           | 类型                     |
+| ------ | -------------- | ------------------------ |
+| ref    | 按钮 html 元素 | `Ref<HTMLButtonElement>` |

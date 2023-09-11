@@ -1,6 +1,14 @@
 <script setup lang="ts">
-import EditIcon from "./EditIcon.vue";
 import { nextTick, ref } from "vue";
+import {
+  Edit,
+  User,
+  Search,
+  Error,
+  Warning,
+  Success,
+} from "@mmcat-ui/components/iconSvg"; // button的icon的props用法需要单独引入
+// } from "mmcat-ui";
 
 const buttonRef = ref();
 nextTick(() => {
@@ -15,19 +23,28 @@ const handlerClick = (e: Event) => {
 <template>
   <div class="play-container">
     <h1>icon组件：</h1>
-    <div>
-      <mc-icon :color="'green'" :size="30">
-        <!-- SVG组件图标 -->
-        <EditIcon />
-      </mc-icon>
-      <hr />
-      <mc-icon :color="'green'" :size="30">
-        <!-- 字体图标 -->
-        <i class="iconfont icon-geren"></i>
-      </mc-icon>
+    <div class="icon">
+      <div class="item">
+        <mc-icon :size="30" :color="'#3451b2'">
+          <!-- SVG组件图标 -->
+          <Edit />
+        </mc-icon>
+      </div>
+      <div class="item">
+        <mc-icon :size="30" :color="'#3451b2'">
+          <!-- SVG组件图标 -->
+          <User />
+        </mc-icon>
+      </div>
+      <div class="item">
+        <mc-icon :size="30" :color="'#3451b2'">
+          <!-- SVG组件图标 -->
+          <Search />
+        </mc-icon>
+      </div>
     </div>
     <h1>button组件：</h1>
-    <div>
+    <div class="item">
       <mc-button type="default">Default</mc-button>
       <mc-button type="primary" ref="buttonRef" @click="handlerClick">
         Primary
@@ -38,7 +55,7 @@ const handlerClick = (e: Event) => {
       <mc-button type="danger">Danger</mc-button>
     </div>
     <hr />
-    <div>
+    <div class="item">
       <mc-button plain>Plain</mc-button>
       <mc-button type="primary" plain>Primary</mc-button>
       <mc-button type="success" plain>Success</mc-button>
@@ -47,7 +64,7 @@ const handlerClick = (e: Event) => {
       <mc-button type="danger" plain>Danger</mc-button>
     </div>
     <hr />
-    <div>
+    <div class="item">
       <mc-button round>Round</mc-button>
       <mc-button type="primary" round>Primary</mc-button>
       <mc-button type="success" round>Success</mc-button>
@@ -56,18 +73,17 @@ const handlerClick = (e: Event) => {
       <mc-button type="danger" round>Danger</mc-button>
     </div>
     <hr />
-    <div>
-      props：
-      <mc-button :icon="EditIcon" circle />
-      <mc-button type="primary" :icon="EditIcon" circle />
-      <mc-button type="success" :icon="EditIcon" circle />
-      <mc-button type="info" :icon="EditIcon" circle />
-      <mc-button type="warning" :icon="EditIcon" circle />
-      <mc-button type="danger" :icon="EditIcon" circle />
-      插槽：
-      <mc-button type="danger" circle>
-        <template #icon><EditIcon /></template>
+    <div class="item">
+      <mc-button :icon="Edit" circle />
+      <!-- 通过插槽实现，支持全局注册 -->
+      <mc-button type="primary" circle>
+        <template #icon><User /></template>
       </mc-button>
+      <!-- 通过props的icon属性实现，需要单独引入IconSvg组件 -->
+      <mc-button type="success" :icon="Search" circle />
+      <mc-button type="info" :icon="Error" circle />
+      <mc-button type="warning" :icon="Warning" circle />
+      <mc-button type="danger" :icon="Success" circle />
     </div>
     <hr />
     <hr />
@@ -100,9 +116,9 @@ const handlerClick = (e: Event) => {
       <mc-button size="small" round>Small</mc-button>
     </div>
     <div class="item">
-      <mc-button :icon="EditIcon" size="large" circle />
-      <mc-button :icon="EditIcon" circle />
-      <mc-button :icon="EditIcon" size="small" circle />
+      <mc-button :icon="Edit" size="large" circle />
+      <mc-button :icon="Edit" circle />
+      <mc-button :icon="Edit" size="small" circle />
     </div>
   </div>
 </template>
@@ -127,4 +143,5 @@ const handlerClick = (e: Event) => {
     margin: 10px 0;
   }
 }
+
 </style>

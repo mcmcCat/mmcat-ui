@@ -1,5 +1,64 @@
-@use "sass:map";
 @use "../mixins/var" as *;
+@use "../mixins/function" as *;
+@use "../common/var" as *;
+
+@mixin button-plain($type) {
+  $button-color-types: (
+    "": (
+      "text-color": (
+        "color",
+        $type,
+      ),
+      "bg-color": (
+        "color",
+        $type,
+        "light-9",
+      ),
+      "border-color": (
+        "color",
+        $type,
+        "light-5",
+      ),
+    ),
+    "hover": (
+      "text-color": (
+        "color",
+        "white",
+      ),
+      "bg-color": (
+        "color",
+        $type,
+      ),
+      "border-color": (
+        "color",
+        $type,
+      ),
+    ),
+    "active": (
+      "text-color": (
+        "color",
+        "white",
+      ),
+    ),
+  );
+
+  @each $type, $typeMap in $button-color-types {
+    @each $typeColor, $list in $typeMap {
+      @include css-var-from-global(("button", $type, $typeColor), $list);
+    }
+  }
+
+  &.is-disabled {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      color: getCssVar("color", $type, "light-5");
+      background-color: getCssVar("color", $type, "light-9");
+      border-color: getCssVar("color", $type, "light-8");
+    }
+  }
+}
 
 @mixin button-variant($type) {
   $button-color-types: (
@@ -109,64 +168,6 @@
   &.is-text,
   &.is-link {
     @include button-plain($type);
-  }
-}
-
-@mixin button-plain($type) {
-  $button-color-types: (
-    "": (
-      "text-color": (
-        "color",
-        $type,
-      ),
-      "bg-color": (
-        "color",
-        $type,
-        "light-9",
-      ),
-      "border-color": (
-        "color",
-        $type,
-        "light-5",
-      ),
-    ),
-    "hover": (
-      "text-color": (
-        "color",
-        "white",
-      ),
-      "bg-color": (
-        "color",
-        $type,
-      ),
-      "border-color": (
-        "color",
-        $type,
-      ),
-    ),
-    "active": (
-      "text-color": (
-        "color",
-        "white",
-      ),
-    ),
-  );
-
-  @each $type, $typeMap in $button-color-types {
-    @each $typeColor, $list in $typeMap {
-      @include css-var-from-global(("button", $type, $typeColor), $list);
-    }
-  }
-
-  &.is-disabled {
-    &,
-    &:hover,
-    &:focus,
-    &:active {
-      color: getCssVar("color", $type, "light-5");
-      background-color: getCssVar("color", $type, "light-9");
-      border-color: getCssVar("color", $type, "light-8");
-    }
   }
 }
 
