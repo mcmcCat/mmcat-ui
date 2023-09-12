@@ -6,7 +6,7 @@ MMCAT-UI 提供了一套常用的图标集合。
 
 - 如果你想像用例一样直接使用，你需要全局注册组件库，或者单独引入才能够直接在项目里使用。
 
-- 如若需要查看所有可用的 SVG 图标请查阅 [@mmcat-ui/components/iconSvg](https://github.com/mcmcCat/mmcat-ui)
+- 如若需要查看所有可用的 SVG 图标请查阅 [@mmcat-ui/components/iconSvg](https://github.com/mcmcCat/mmcat-ui/tree/master/packages/components/iconSvg)
 
 ## 基础用法
 
