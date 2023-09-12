@@ -4,4 +4,4 @@ import Icon from './src/icon.vue'
 const McIcon = withInstall(Icon)
 export default McIcon
 // 导出 Icon 组件的 props
-export * from './src/icon'
+// export * from './src/icon'

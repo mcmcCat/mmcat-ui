@@ -1,23 +1,49 @@
 <script setup lang="ts">
-import { nextTick, ref } from "vue";
+import { nextTick, ref, getCurrentInstance } from "vue";
 import {
   Edit,
   User,
   Search,
-  Error,
-  Warning,
-  Success,
+  // Error,
+  // Warning,
+  // Success,
 } from "@mmcat-ui/components/iconSvg"; // button的icon的props用法需要单独引入
 // } from "mmcat-ui";
+
+import { McMessage } from "../../packages/index";
+// import { McMessage } from "mmcat-ui";
+
+const instance = getCurrentInstance()
+const $message = instance?.appContext.config.globalProperties.$message
+
+const show1 = () => {
+  McMessage({
+    type: 'success',
+    message: 'Congrats, this is a success message',
+    duration: 113000,
+  });
+}
+const show2 = () => {
+  McMessage({
+    type: 'warning',
+    message: 'Warning, this is a warning message.',
+    duration: 113000,
+  });
+}
+const show3 = () => {
+  $message({
+    type: 'error',
+    message: 'Oops, this is a error message.',
+    duration: 113000,
+  });
+}
 
 const buttonRef = ref();
 nextTick(() => {
   console.log("buttonRef", buttonRef.value.ref);
 });
 
-const handlerClick = (e: Event) => {
-  console.log(e);
-};
+
 </script>
 
 <template>
@@ -43,82 +69,15 @@ const handlerClick = (e: Event) => {
         </mc-icon>
       </div>
     </div>
-    <h1>button组件：</h1>
+    <h1>message组件：</h1>
     <div class="item">
-      <mc-button type="default">Default</mc-button>
-      <mc-button type="primary" ref="buttonRef" @click="handlerClick">
-        Primary
-      </mc-button>
-      <mc-button type="success">Success</mc-button>
-      <mc-button type="info">Info</mc-button>
-      <mc-button type="warning">Warning</mc-button>
-      <mc-button type="danger">Danger</mc-button>
-    </div>
-    <hr />
-    <div class="item">
-      <mc-button plain>Plain</mc-button>
-      <mc-button type="primary" plain>Primary</mc-button>
-      <mc-button type="success" plain>Success</mc-button>
-      <mc-button type="info" plain>Info</mc-button>
-      <mc-button type="warning" plain>Warning</mc-button>
-      <mc-button type="danger" plain>Danger</mc-button>
-    </div>
-    <hr />
-    <div class="item">
-      <mc-button round>Round</mc-button>
-      <mc-button type="primary" round>Primary</mc-button>
-      <mc-button type="success" round>Success</mc-button>
-      <mc-button type="info" round>Info</mc-button>
-      <mc-button type="warning" round>Warning</mc-button>
-      <mc-button type="danger" round>Danger</mc-button>
-    </div>
-    <hr />
-    <div class="item">
-      <mc-button :icon="Edit" circle />
-      <!-- 通过插槽实现，支持全局注册 -->
-      <mc-button type="primary" circle>
-        <template #icon><User /></template>
-      </mc-button>
-      <!-- 通过props的icon属性实现，需要单独引入IconSvg组件 -->
-      <mc-button type="success" :icon="Search" circle />
-      <mc-button type="info" :icon="Error" circle />
-      <mc-button type="warning" :icon="Warning" circle />
-      <mc-button type="danger" :icon="Success" circle />
-    </div>
-    <hr />
-    <hr />
-    <div class="item">
-      <mc-button disabled>Default</mc-button>
-      <mc-button type="primary" disabled>Primary</mc-button>
-      <mc-button type="success" disabled>Success</mc-button>
-      <mc-button type="info" disabled>Info</mc-button>
-      <mc-button type="warning" disabled>Warning</mc-button>
-      <mc-button type="danger" disabled>Danger</mc-button>
+      <mc-button @click="show1">McMessage</mc-button>
     </div>
     <div class="item">
-      <mc-button plain disabled>Plain</mc-button>
-      <mc-button type="primary" plain disabled>Primary</mc-button>
-      <mc-button type="success" plain disabled>Success</mc-button>
-      <mc-button type="info" plain disabled>Info</mc-button>
-      <mc-button type="warning" plain disabled>Warning</mc-button>
-      <mc-button type="danger" plain disabled>Danger</mc-button>
-    </div>
-    <hr />
-    <hr />
-    <div class="item">
-      <mc-button size="large">Large</mc-button>
-      <mc-button>Default</mc-button>
-      <mc-button size="small">Small</mc-button>
+      <mc-button @click="show2">McMessage</mc-button>
     </div>
     <div class="item">
-      <mc-button size="large" round>Large</mc-button>
-      <mc-button round>Default</mc-button>
-      <mc-button size="small" round>Small</mc-button>
-    </div>
-    <div class="item">
-      <mc-button :icon="Edit" size="large" circle />
-      <mc-button :icon="Edit" circle />
-      <mc-button :icon="Edit" size="small" circle />
+      <mc-button @click="show3">$message</mc-button>
     </div>
   </div>
 </template>
@@ -143,5 +102,4 @@ const handlerClick = (e: Event) => {
     margin: 10px 0;
   }
 }
-
 </style>

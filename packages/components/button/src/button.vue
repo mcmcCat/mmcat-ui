@@ -27,7 +27,7 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import { useNamespace } from "@mmcat-ui/hooks";
-import { buttonEmits, buttonProps } from "./button";
+import { buttonEmits, buttonProps} from "./button";
 // 定义组件名称
 defineOptions({
   name: "McButton",

@@ -1,10 +1,28 @@
 import McIcon from "./components/icon";
 import McButton from "./components/button";
-import { Edit, User, Search, Error, Warning, Success } from "@mmcat-ui/components/iconSvg";
+import McMessage from "./components/message";
+import {
+  Edit,
+  User,
+  Search,
+  Error,
+  Warning,
+  Success,
+} from "@mmcat-ui/components/iconSvg";
 import "./theme-chalk/src/index.scss";
 
 // 组件库
-const components = [McIcon, McButton, Edit, User, Search, Error, Warning, Success];
+const components = [
+  McIcon,
+  McButton,
+  McMessage,
+  Edit,
+  User,
+  Search,
+  Error,
+  Warning,
+  Success,
+];
 // 是否已安装标识
 const INSTALLED_KEY = Symbol("INSTALLED_KEY");
 // 组件库插件
@@ -19,5 +37,15 @@ const McElementPlus = {
   },
 };
 
-export { McIcon, McButton, Edit, User, Search, Error, Warning, Success };
+export {
+  McIcon,
+  McButton,
+  McMessage,
+  Edit,
+  User,
+  Search,
+  Error,
+  Warning,
+  Success,
+};
 export default McElementPlus;
