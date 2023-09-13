@@ -1,5 +1,5 @@
 import { createApp, ref, watch } from 'vue';
-import type { PropType,App,ComponentPublicInstance } from 'vue'
+import type { App,ComponentPublicInstance } from 'vue'
 import Message from './message.vue';
 
 interface CustomComponent extends ComponentPublicInstance {
@@ -11,7 +11,7 @@ interface CustomComponent extends ComponentPublicInstance {
   consZIndex: number;
 }
 
-type MessageType = 'success' | 'warning' | 'error' ;
+type MessageType = 'success' | 'warning' | 'danger' | 'info';
 
 export interface MessageProps { 
   type: MessageType;

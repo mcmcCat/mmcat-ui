@@ -13,37 +13,44 @@ import {
 import { McMessage } from "../../packages/index";
 // import { McMessage } from "mmcat-ui";
 
-const instance = getCurrentInstance()
-const $message = instance?.appContext.config.globalProperties.$message
+const instance = getCurrentInstance();
+console.log(instance);
+
+const $message = instance?.appContext.config.globalProperties.$message;
 
 const show1 = () => {
   McMessage({
-    type: 'success',
-    message: 'Congrats, this is a success message',
+    type: "success",
+    message: "Congrats, this is a success message",
     duration: 113000,
   });
-}
+};
 const show2 = () => {
   McMessage({
-    type: 'warning',
-    message: 'Warning, this is a warning message.',
+    type: "warning",
+    message: "Warning, this is a warning message.",
     duration: 113000,
   });
-}
+};
 const show3 = () => {
   $message({
-    type: 'error',
-    message: 'Oops, this is a error message.',
+    type: "danger",
+    message: "Oops, this is a danger message.",
     duration: 113000,
   });
-}
+};
+const show4 = () => {
+  $message({
+    type: "info",
+    message: "this is a message.",
+    duration: 113000,
+  });
+};
 
 const buttonRef = ref();
 nextTick(() => {
   console.log("buttonRef", buttonRef.value.ref);
 });
-
-
 </script>
 
 <template>
@@ -69,15 +76,42 @@ nextTick(() => {
         </mc-icon>
       </div>
     </div>
+    <div class="item">
+      <mc-button type="default">Default</mc-button>
+      <mc-button type="primary">Primary</mc-button>
+      <mc-button type="success">Success</mc-button>
+      <mc-button type="info">Info</mc-button>
+      <mc-button type="warning">Warning</mc-button>
+      <mc-button type="danger">Danger</mc-button>
+    </div>
+    <div class="item">
+      <mc-button plain>Plain</mc-button>
+      <mc-button type="primary" plain>Primary</mc-button>
+      <mc-button type="success" plain>Success</mc-button>
+      <mc-button type="info" plain>Info</mc-button>
+      <mc-button type="warning" plain>Warning</mc-button>
+      <mc-button type="danger" plain>Danger</mc-button>
+    </div>
+    <div class="item">
+      <mc-button round>Round</mc-button>
+      <mc-button type="primary" round>Primary</mc-button>
+      <mc-button type="success" round>Success</mc-button>
+      <mc-button type="info" round>Info</mc-button>
+      <mc-button type="warning" round>Warning</mc-button>
+      <mc-button type="danger" round>Danger</mc-button>
+    </div>
     <h1>message组件：</h1>
     <div class="item">
-      <mc-button @click="show1">McMessage</mc-button>
+      <mc-button type="success" @click="show1">McMessage</mc-button>
     </div>
     <div class="item">
-      <mc-button @click="show2">McMessage</mc-button>
+      <mc-button type="warning" @click="show2">McMessage</mc-button>
     </div>
     <div class="item">
-      <mc-button @click="show3">$message</mc-button>
+      <mc-button type="danger" @click="show3">$message</mc-button>
+    </div>
+    <div class="item">
+      <mc-button type="info" @click="show4">$message</mc-button>
     </div>
   </div>
 </template>

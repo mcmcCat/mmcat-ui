@@ -3,9 +3,19 @@
 @use "sass:map";
 @use "../mixins/function.scss" as *;
 
-// types
-$types: primary, success, warning, danger, error, info;
+$message: () !default;
+$message: map.merge(
+  (
+    "font-weight": getCssVar("font-weight-primary"),
+    "border-color": getCssVar("border-color"),
+    "bg-color": getCssVar("fill-color", "blank"),
+    "text-color": getCssVar("text-color", "regular"),
+  ),
+  $message
+);
 
+// types
+$types: primary, success, warning, danger, info;
 // Color
 $colors: () !default;
 $colors: map.deep-merge(
@@ -24,9 +34,6 @@ $colors: map.deep-merge(
     "danger": (
       "base": #f56c6c,
     ),
-    "error": (
-      "base": #f56c6c,
-    ),
     "info": (
       "base": #909399,
     ),
@@ -40,7 +47,6 @@ $color-primary: map.get($colors, "primary", "base") !default;
 $color-success: map.get($colors, "success", "base") !default;
 $color-warning: map.get($colors, "warning", "base") !default;
 $color-danger: map.get($colors, "danger", "base") !default;
-$color-error: map.get($colors, "error", "base") !default;
 $color-info: map.get($colors, "info", "base") !default;
 
 // https://sass-lang.com/documentation/values/maps#immutability

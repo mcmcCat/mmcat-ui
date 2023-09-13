@@ -8,7 +8,7 @@ MMCAT-UI 提供了一套常用的图标集合。
 
 - 如若需要查看所有可用的 SVG 图标请查阅 [@mmcat-ui/components/iconSvg](https://github.com/mcmcCat/mmcat-ui/tree/master/packages/components/iconSvg)
 
-## 基础用法
+## 基本使用
 
 SVG 组件图标、字体图标
 

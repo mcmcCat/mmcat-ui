@@ -28,7 +28,7 @@
 
   // --el-color-#{$type}
   // --el-color-#{$type}-light-{$i}
-  @each $type in (primary, success, warning, danger, error, info) {
+  @each $type in (primary, success, warning, danger, info) {
     @include set-css-color-type($colors, $type);
   }
 

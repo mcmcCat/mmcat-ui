@@ -2,6 +2,14 @@
 @use "../mixins/function" as *;
 @use "../common/var" as *;
 
+// $type 是 success、warning、danger、info
+
+// 在.el-button--$type 中生成对应plain样式，在button-variant中注入
+
+// 最终生成：
+// .el-button--success {
+//   --el-button-hover-bg-color: #ffffff;
+// }
 @mixin button-plain($type) {
   $button-color-types: (
     "": (
@@ -60,6 +68,7 @@
   }
 }
 
+// 生成.el-button--$type 的样式
 @mixin button-variant($type) {
   $button-color-types: (
     "": (
@@ -160,13 +169,13 @@
       // "bg-color"
       // @debug $list;
       // "color",success,"dark-2", 注意这个$type是button-variant的形参$type
+
+      // --el-button-active-bg-color: var(--el-color-success-dark-2);
       @include css-var-from-global(("button", $type, $typeColor), $list);
     }
   }
 
-  &.is-plain,
-  &.is-text,
-  &.is-link {
+  &.is-plain {
     @include button-plain($type);
   }
 }

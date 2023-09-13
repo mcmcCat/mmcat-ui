@@ -1,0 +1,52 @@
+@use "sass:map";
+@use "common/var" as *;
+@use "mixins/message" as *;
+@use "mixins/mixins" as *;
+@use "mixins/var" as *;
+
+@include b(message) {
+  @include set-component-css-var("message", $message);
+}
+
+@include b(message) {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99999;
+  padding: 0 25px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  border-radius: 3px;
+  text-align: center;
+  color: getCssVar("message", "text-color");
+  font-weight: getCssVar("message", "font-weight");
+  background-color: getCssVar("message", "bg-color");
+  border: getCssVar("border");
+  border-color: getCssVar("message", "border-color");
+  pointer-events: none;
+
+  @each $type in (success, warning, danger, info) {
+    @include m($type) {
+      @include message-variant($type);
+    }
+  }
+  svg {
+    fill: currentColor;
+  }
+}
+.message-fade-enter-active {
+  transition: all 0.3s ease-in;
+}
+.message-fade-leave-active {
+  transition: all 0.3s ease-out;
+}
+
+.message-fade-enter-from,
+.message-fade-leave-to {
+  top: -30px;
+  opacity: 0;
+}
