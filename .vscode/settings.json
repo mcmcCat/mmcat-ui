@@ -1,3 +1,11 @@
 {
-  "cSpell.words": ["bianji", "mcmccat", "typecheck", "unplugin"]
+  "cSpell.words": [
+    "bianji",
+    "compositionend",
+    "compositionstart",
+    "compositionupdate",
+    "mcmccat",
+    "typecheck",
+    "unplugin"
+  ]
 }

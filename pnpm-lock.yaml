@@ -7,6 +7,9 @@ importers:
       '@mmcat-ui/components':
         specifier: workspace:^
         version: link:packages/components
+      '@mmcat-ui/constants':
+        specifier: workspace:^
+        version: link:packages/constants
       '@mmcat-ui/theme-chalk':
         specifier: workspace:^
         version: link:packages/theme-chalk
@@ -43,6 +46,8 @@ importers:
         version: 1.8.5(typescript@5.2.2)
 
   packages/components: {}
+
+  packages/constants: {}
 
   packages/hooks:
     dependencies:

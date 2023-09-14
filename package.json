@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@mmcat-ui/components": "workspace:^",
+    "@mmcat-ui/constants": "workspace:^",
     "@mmcat-ui/theme-chalk": "workspace:^",
     "@mmcat-ui/utils": "workspace:^"
   },

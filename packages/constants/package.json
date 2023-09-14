@@ -1,0 +1,6 @@
+{
+  "name": "@mmcat-ui/constants",
+  "private": true,
+  "license": "MIT",
+  "main": "index.ts"
+}

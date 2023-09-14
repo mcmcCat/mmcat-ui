@@ -1,6 +1,7 @@
 import McIcon from "./components/icon";
 import McButton from "./components/button";
 import McMessage from "./components/message";
+import McInput from "./components/input";
 import {
   Edit,
   User,
@@ -16,6 +17,7 @@ const components = [
   McIcon,
   McButton,
   McMessage,
+  McInput,
   Edit,
   User,
   Search,
@@ -41,6 +43,7 @@ export {
   McIcon,
   McButton,
   McMessage,
+  McInput,
   Edit,
   User,
   Search,
