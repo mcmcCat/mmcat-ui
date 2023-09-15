@@ -1,0 +1,185 @@
+@use "sass:map";
+
+@use "mixins/mixins" as *;
+@use "mixins/var" as *;
+@use "common/var" as *;
+
+@mixin mixed-input-border($color) {
+  box-shadow: 0 0 0 1px $color inset;
+}
+
+@include b(input) {
+  @include set-component-css-var("input", $input);
+}
+
+@include b(input) {
+  @include css-var-from-global("input-height", "component-size");
+
+  position: relative;
+  font-size: getCssVar("font-size", "base");
+  display: inline-flex;
+  width: getCssVar("input-width");
+  line-height: getCssVar("input-height");
+  box-sizing: border-box;
+  vertical-align: middle;
+
+  svg {
+    fill: currentcolor;
+    width: map.get($input-font-size, "default");
+    height: map.get($input-font-size, "default");
+    vertical-align: -0.15em; /* 因icon大小被设置为和字体大小一致，而span等标签的下边缘会和字体的基线对齐，故需设置一个往下的偏移比例，来纠正视觉上的未对齐效果 */
+  }
+
+  & .#{$namespace}-input__clear,
+  & .#{$namespace}-input__password {
+    color: getCssVar("input-icon-color");
+    font-size: map.get($input-font-size, "default");
+    cursor: pointer;
+
+    &:hover {
+      color: getCssVar("input-clear-hover-color");
+    }
+  }
+
+  @include e(wrapper) {
+    display: inline-flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    padding: $border-width map.get($input-padding-horizontal, "default")-$border-width;
+    background-color: var(
+      #{getCssVarName("input-bg-color")},
+      map.get($input, "bg-color")
+    );
+    background-image: none;
+    border-radius: getCssVarWithDefault(
+      "input-border-radius",
+      map.get($input, "border-radius")
+    );
+    cursor: text;
+
+    @include inset-input-border(
+      var(
+        #{getCssVarName("input-border-color")},
+        map.get($input, "border-color")
+      )
+    );
+
+    &:hover {
+      @include inset-input-border(#{getCssVar("input", "hover-border-color")});
+    }
+
+    @include when(focus) {
+      @include inset-input-border(#{getCssVar("input", "focus-border-color")});
+    }
+  }
+
+  @include e(inner) {
+    // use map.get as default value for date picker range
+    @include set-css-var-value(
+      "input-inner-height",
+      calc(
+        var(
+            #{getCssVarName("input-height")},
+            #{map.get($input-height, "default")}
+          ) - $border-width * 2
+      )
+    );
+
+    width: 100%;
+    flex-grow: 1;
+    -webkit-appearance: none;
+    color: var(
+      #{getCssVarName("input-text-color")},
+      map.get($input, "text-color")
+    );
+    font-size: inherit;
+    height: getCssVar("input-inner-height");
+    line-height: getCssVar("input-inner-height");
+    padding: 0;
+    outline: none;
+    border: none;
+    background: none;
+    box-sizing: border-box;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: getCssVarWithDefault(
+        "input-placeholder-color",
+        map.get($input, "placeholder-color")
+      );
+    }
+
+    // override edge default style
+    &[type="password"]::-ms-reveal {
+      display: none;
+    }
+  }
+
+  @each $slot in (prefix, suffix) {
+    @include e($slot) {
+      display: inline-flex;
+      white-space: nowrap;
+      flex-shrink: 0;
+      flex-wrap: nowrap;
+      height: 100%;
+      text-align: center;
+      color: var(
+        #{getCssVarName("input-icon-color")},
+        map.get($input, "icon-color")
+      );
+      transition: all getCssVar("transition-duration");
+      pointer-events: none;
+    }
+
+    @include e(#{$slot}-inner) {
+      pointer-events: all;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      @if $slot == prefix {
+        > :last-child {
+          margin-right: 8px;
+        }
+
+        > :first-child {
+          &,
+          &.#{$namespace}-input__icon {
+            margin-left: 0;
+          }
+        }
+      } @else {
+        > :first-child {
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+
+  @include when(disabled) {
+    cursor: not-allowed;
+
+    .#{$namespace}-input__wrapper {
+      background-color: map.get($input-disabled, "fill");
+      @include mixed-input-border(map.get($input-disabled, "border"));
+    }
+
+    .#{$namespace}-input__inner {
+      color: map.get($input-disabled, "text-color");
+      -webkit-text-fill-color: map.get($input-disabled, "text-color");
+      cursor: not-allowed;
+
+      &::placeholder {
+        color: map.get($input-disabled, "placeholder-color");
+      }
+    }
+
+    .#{$namespace}-input__icon {
+      cursor: not-allowed;
+    }
+  }
+}

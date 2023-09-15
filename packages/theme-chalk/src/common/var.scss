@@ -367,5 +367,70 @@ $common-component-size: map.merge(
 
 // Input
 // css3 var in packages/theme-chalk/src/input.scss
+$input: () !default;
+$input: map.merge(
+  (
+    "text-color": getCssVar("text-color-regular"),
+    "border": getCssVar("border"),
+    "hover-border": getCssVar("border-color-hover"),
+    "focus-border": getCssVar("color-primary"),
+    "transparent-border": 0 0 0 1px transparent inset,
+    "border-color": getCssVar("border-color"),
+    "border-radius": getCssVar("border-radius-base"),
+    "bg-color": getCssVar("fill-color", "blank"),
+    "icon-color": getCssVar("text-color-placeholder"),
+    "placeholder-color": getCssVar("text-color-placeholder"),
+    "hover-border-color": getCssVar("border-color-hover"),
+    "clear-hover-color": getCssVar("text-color-secondary"),
+    "focus-border-color": getCssVar("color-primary"),
+    "width": 100%,
+  ),
+  $input
+);
+
+$input-disabled: () !default;
+$input-disabled: map.merge(
+  (
+    "fill": getCssVar("disabled-bg-color"),
+    "border": getCssVar("disabled-border-color"),
+    "text-color": getCssVar("disabled-text-color"),
+    "placeholder-color": getCssVar("text-color-placeholder"),
+  ),
+  $input-disabled
+);
+
+$input-font-size: () !default;
+$input-font-size: map.merge(
+  (
+    "large": 14px,
+    "default": 14px,
+    "small": 12px,
+  ),
+  $input-font-size
+);
+
 $input-height: () !default;
 $input-height: map.merge($common-component-size, $input-height);
+
+$input-line-height: () !default;
+$input-line-height: map.merge($common-component-size, $input-line-height);
+
+$input-number-width: () !default;
+$input-number-width: map.merge(
+  (
+    "large": 180px,
+    "default": 150px,
+    "small": 120px,
+  ),
+  $input-number-width
+);
+
+$input-padding-horizontal: () !default;
+$input-padding-horizontal: map.merge(
+  (
+    "large": 16px,
+    "default": 12px,
+    "small": 8px,
+  ),
+  $input-padding-horizontal
+);

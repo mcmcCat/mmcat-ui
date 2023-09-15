@@ -20,6 +20,9 @@
 
   // --el-border-radius-#{$type}
   @include set-component-css-var("border-radius", $border-radius);
+
+  // common component size
+  @include set-component-css-var("component-size", $common-component-size);
 }
 
 // for light
