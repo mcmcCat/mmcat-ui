@@ -18,7 +18,8 @@
     "@mmcat-ui/components": "workspace:^",
     "@mmcat-ui/constants": "workspace:^",
     "@mmcat-ui/theme-chalk": "workspace:^",
-    "@mmcat-ui/utils": "workspace:^"
+    "@mmcat-ui/utils": "workspace:^",
+    "mmcat-ui": "^1.1.0"
   },
   "devDependencies": {
     "@mmcat-ui/hooks": "workspace:^",

@@ -3,7 +3,7 @@ import { UPDATE_MODEL_EVENT } from '@mmcat-ui/constants'
 import type { ExtractPropTypes, PropType } from 'vue'
 import type Input from './input.vue'
 
-type Size = 'large'|'middle'|'small'
+type Size = 'large' | 'small'
 // 定义 props
 export const inputProps = {
   modelValue: {
@@ -12,7 +12,7 @@ export const inputProps = {
   },
   size: {
     type: String as PropType<Size>,
-    default: 'middle',
+    default: '',
   },
   modelModifiers: { default: () => ({}) },
   prefix: String,

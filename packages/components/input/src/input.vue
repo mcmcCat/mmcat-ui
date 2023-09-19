@@ -1,6 +1,8 @@
 <template>
-  <div :class="[bem.b(), bem.m('size'),bem.is('disabled',disabled)]">
+  <div :class="[bem.b(), bem.m(size),bem.is('disabled',disabled)]">
     <div :class="bem.e('wrapper')">
+
+      <!-- prefix -->
       <span :class="bem.e('prefix')" v-if="prefix || $slots.prefix">
         <span :class="bem.e('prefix-inner')">
           <slot name="prefix">

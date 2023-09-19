@@ -1,25 +1,35 @@
 {
-  "hash": "b29c8660",
-  "browserHash": "8c704f61",
+  "hash": "416c9b49",
+  "browserHash": "abb90814",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/.pnpm/vue@3.3.4/node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "755ad1a8",
+      "fileHash": "1347186a",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/.pnpm/@vue+devtools-api@6.5.0/node_modules/@vue/devtools-api/lib/esm/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "f7eda98e",
+      "fileHash": "97c854a1",
+      "needsInterop": false
+    },
+    "mmcat-ui": {
+      "src": "../../../../node_modules/.pnpm/mmcat-ui@1.1.0/node_modules/mmcat-ui/dist/mmcat-ui.js",
+      "file": "mmcat-ui.js",
+      "fileHash": "d91d3fd1",
       "needsInterop": false
     },
     "@vue/shared": {
       "src": "../../../../packages/node_modules/@vue/shared/dist/shared.esm-bundler.js",
       "file": "@vue_shared.js",
-      "fileHash": "efcbc2e8",
+      "fileHash": "6d85d523",
       "needsInterop": false
     }
   },
-  "chunks": {}
+  "chunks": {
+    "chunk-67UUJLDS": {
+      "file": "chunk-67UUJLDS.js"
+    }
+  }
 }

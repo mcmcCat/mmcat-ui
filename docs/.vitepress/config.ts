@@ -49,10 +49,6 @@ export default {
               link: "/components/Basic/Icon/",
             },
             {
-              text: "Selector 下拉菜单",
-              link: "/components/Basic/Selector/",
-            },
-            {
               text: "Message 消息提示",
               link: "/components/Basic/Message/",
             },
@@ -67,8 +63,8 @@ export default {
               link: "/components/Form/Input/",
             },
             {
-              text: "Checkbox 多选框",
-              link: "/components/Form/Checkbox/",
+              text: "Selector 下拉菜单",
+              link: "/components/Form/Selector/",
             },
           ],
         },

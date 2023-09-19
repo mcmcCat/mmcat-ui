@@ -151,7 +151,7 @@ function setTop(newTop: number, newZIndex: number) {
   zIndex.value = newZIndex;
 }
 
-// 暴露方法和属性到实例上（让index.ts中可以使用）
+// 暴露方法和属性到实例上（让message.ts中可以使用）
 defineExpose({
   setIsShow,
   setTop,
