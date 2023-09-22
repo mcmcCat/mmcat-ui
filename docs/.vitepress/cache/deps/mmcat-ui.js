@@ -1,6 +1,6 @@
 import {
   Transition,
-  computed,
+  computed2 as computed,
   createApp,
   createBaseVNode,
   createBlock,
@@ -26,7 +26,7 @@ import {
   watch,
   withCtx,
   withDirectives
-} from "./chunk-67UUJLDS.js";
+} from "./chunk-XKSR56VD.js";
 import "./chunk-UXIASGQL.js";
 
 // node_modules/.pnpm/mmcat-ui@1.1.0/node_modules/mmcat-ui/dist/mmcat-ui.js

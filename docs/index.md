@@ -1,17 +1,23 @@
 ---
 layout: home
 
+title: VUE MMCAT UI
+titleTemplate: Great UI Components Library
+
 hero:
-  name: MMCAT UI
-  text: 一个Vue3组件库
-  tagline: 简单、强大、高性能！
+  name: VUE MMCAT UI
+  text: MMCAT UI 组件库
+  tagline: 基于 Vue3 + TS + Vite 开发
   actions:
     - theme: brand
       text: 开始
       link: /guild/installation
     - theme: alt
       text: View on GitHub
-      link: https://github.com/mcmcCat/tsheep-ui/tree/master
+      link: https://github.com/mcmcCat/mmcat-ui
+    - theme: alt
+      text: View on NPM
+      link: https://www.npmjs.com/package/mmcat-ui?activeTab=readme
 
 features:
   - icon: 💡

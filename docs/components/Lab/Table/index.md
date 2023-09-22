@@ -4,7 +4,7 @@
 
 ## 场景
 
-自定义列全部勾选的场景下（20 行 x 180 列），列表中的开关切换，预期为 **400-500 毫秒**，然而由于数据量大的原因，总体渲染时间竟然达到了 **7-8 秒**！这对用户的体验无疑是致命的！
+自定义列全部勾选的场景下（20 行 x 180 列），列表中的开关切换，预期为 **400-500 毫秒**，然而由于数据量大的原因，总体渲染时间竟然达到了 **7-8 秒**！这对用户的体验无疑是致命的！[优化的可行性分析](https://cn.vuejs.org/guide/best-practices/performance.html#reduce-reactivity-overhead-for-large-immutable-structures)
 
 <script setup lang="ts">
 import LocalEditTableFrame from '../../../../play-table/src/views/LocalEditTableFrame.vue'
@@ -49,4 +49,4 @@ import TableFrame from '../../../../play-table/src/views/TableFrame.vue'
 
 ## 具体实现
 
-详情见[]()
+详情见[源码仓库](https://github.com/mcmcCat/mmcat-ui/tree/master/play-table)

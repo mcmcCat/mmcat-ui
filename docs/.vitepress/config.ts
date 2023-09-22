@@ -1,5 +1,6 @@
 export default {
-  base: process.env.NODE_ENV === "production" ? "/mmcat-ui/" : "/",
+  title: `MMCAT UI`,
+  base: "/mmcat-ui/",
   // 主题配置
   themeConfig: {
     // 站点标题 (页面左上角标题)
@@ -9,11 +10,35 @@ export default {
     nav: [
       { text: "指南", link: "/guild/installation" },
       { text: "组件", link: "/components/Basic/Button/" },
+      {
+        text: '链接',
+        items: [
+          { text: 'My Github', link: 'https://github.com/mcmcCat' },
+          { text: 'My Juejin', link: 'https://juejin.cn/user/1465022832714455' },
+          { text: 'Front-end Notes', link: 'https://www.yuque.com/maimaicat' },
+          {
+            items: [
+              {
+                text: 'vue',
+                link: 'https://cn.vuejs.org/'
+              },
+              {
+                text: 'vitepress',
+                link: 'https://vitepress.dev/'
+              },
+              {
+                text: 'markdown',
+                link: 'https://markdown.com.cn/'
+              }
+            ]
+          }
+        ]
+      }
     ],
     // 社交平台地址
     socialLinks: [
       // github
-      { icon: "github", link: "https://github.com/mcmcCat/tsheep-ui/tree/master" },
+      { icon: "github", link: "https://github.com/mcmcCat/mmcat-ui" },
     ],
     // 侧边栏
     sidebar: {
