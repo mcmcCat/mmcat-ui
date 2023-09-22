@@ -62,9 +62,15 @@ export default {
               text: "Input 输入框",
               link: "/components/Form/Input/",
             },
+          ],
+        },
+        {
+          text: "组件实验室",
+          collapsed: false,
+          items: [
             {
-              text: "Selector 下拉菜单",
-              link: "/components/Form/Selector/",
+              text: "Table 性能优化",
+              link: "/components/Lab/Table/",
             },
           ],
         },
