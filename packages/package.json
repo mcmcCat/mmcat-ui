@@ -5,7 +5,7 @@
   "files": [
     "dist",
     "package.json",
-    "README.md"
+    "../README.md"
   ],
   "main": "./dist/mmcat-ui.umd.cjs",
   "module": "./dist/mmcat-ui.js",
