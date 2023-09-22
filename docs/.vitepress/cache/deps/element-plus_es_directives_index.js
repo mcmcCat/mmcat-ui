@@ -3,7 +3,8 @@ import {
   isElement,
   isFunction,
   obtainAllFocusableElements
-} from "./chunk-5EJQJJQP.js";
+} from "./chunk-PVXH4TXE.js";
+import "./chunk-N33PAY7X.js";
 import {
   isClient
 } from "./chunk-27DSPEQQ.js";
@@ -11,7 +12,6 @@ import "./chunk-IFJDLX57.js";
 import {
   nextTick
 } from "./chunk-XKSR56VD.js";
-import "./chunk-N33PAY7X.js";
 import "./chunk-UXIASGQL.js";
 
 // play-table/node_modules/element-plus/es/directives/click-outside/index.mjs

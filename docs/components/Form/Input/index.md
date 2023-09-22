@@ -173,13 +173,6 @@ watchEffect(() => {
 
 :::
 
-<!-- <div class="example">
-  <div class="item">
-  </div>
-  <div class="item">
-  </div>
-</div> -->
-
 <style scoped>
   .example {
     display: flex;
@@ -192,3 +185,17 @@ watchEffect(() => {
     margin: 10px 0;
   } 
 </style>
+
+## API
+
+### Attributes
+
+| 属性名                | 说明                     | 类型                              | 默认值  |
+| --------------------- | ------------------------ | --------------------------------- | ------- |
+| size                  | 输入框大小               | `'large' \| 'default' \| 'small'` | default |
+| model-value / v-model | 绑定值                   | `'string' \| 'number'`            | —       |
+| allowClear            | 可以点击清除图标删除内容 | `boolean`                         | false   |
+| password              | 是否启用密码框           | `boolean`                         | false   |
+| prefix                | 前缀图标                 | `string`                          | —       |
+| suffix                | 后缀图标                 | `string`                          | —       |
+| disabled              | 是否禁用                 | `boolean`                         | false   |

@@ -4,8 +4,12 @@
     "compositionend",
     "compositionstart",
     "compositionupdate",
+    "endregion",
+    "Hiehgt",
     "mcmccat",
     "pinia",
+    "Sanxin",
+    "Sanxins",
     "typecheck",
     "unplugin"
   ]
