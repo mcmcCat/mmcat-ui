@@ -1,11 +1,11 @@
 {
   "name": "mmcat-ui",
-  "version": "1.1.0",
+  "version": "1.2.2",
   "description": "A Vue3 Cool UI From mcmcCat.",
   "files": [
     "dist",
     "package.json",
-    "../README.md"
+    "README.md"
   ],
   "main": "./dist/mmcat-ui.umd.cjs",
   "module": "./dist/mmcat-ui.js",
