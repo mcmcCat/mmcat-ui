@@ -5,6 +5,7 @@
     "compositionstart",
     "compositionupdate",
     "mcmccat",
+    "pinia",
     "typecheck",
     "unplugin"
   ]

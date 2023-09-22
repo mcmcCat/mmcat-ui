@@ -1,0 +1,9 @@
+@import './base.css';
+
+a,
+.green {
+  margin-right: 15px;;
+  text-decoration: none;
+  color: #666;
+  transition: 0.4s;
+}
