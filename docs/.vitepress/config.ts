@@ -5,7 +5,7 @@ export default {
   themeConfig: {
     // 站点标题 (页面左上角标题)
     siteTitle: "MMCAT UI", //设置成false后，可用logo代替
-    // logo: 'imgUrl',
+    logo: "/cat.png",
     // 导航栏
     nav: [
       { text: "指南", link: "/guild/installation" },

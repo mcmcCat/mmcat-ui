@@ -1,8 +1,8 @@
 # mmcat-ui
 
 _该组件库采用 `Vue@3.3.4 `+ `TypeScript@5.2.2` + `Vite@4.4.5` + `Sass@1.66.1` 实现！_<br/>
-_所有组件样式 采用 `BEM`规范，参照 `Element-Plus` 官方样式架构！_<br/>
-_开箱即用，常用基础 UI 组件，以及研究组件**性能优化**！_<br/>
+_所有组件样式使用 BEM 设计模式，效仿 Element-Plus 官方样式架构！_<br/>
+_开箱即用，提供常用基础 UI 组件，以及探讨一些组件的常用**性能优化**方案！_<br/>
 
 ## Document & Online preview
 

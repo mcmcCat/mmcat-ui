@@ -1,5 +1,6 @@
 // 使用并扩展默认主题 DefaultTheme
 import DefaultTheme from "vitepress/theme";
+import './global.scss' // global less
 
 /* development */
 import McElementPlus from '../../../packages/dist/mmcat-ui'
@@ -13,6 +14,8 @@ export * from '../../../packages/dist/mmcat-ui';
 /* lab components */
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
+
+// common
 
 export default {
   ...DefaultTheme,
